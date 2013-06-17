@@ -1,0 +1,2 @@
+module BrunchFindersHelper
+end

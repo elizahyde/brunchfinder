@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: brunchfinder_development
+  pool: 5
+  username: elizahyde
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: brunchfinder_test
+  pool: 5
+  username: elizahyde
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: brunchfinder_production
+  pool: 5
+  username: elizahyde
+  password:
+  host: localhost
