@@ -2,13 +2,23 @@
 <html>
 <head>
   <title>Brunchfinder</title>
+  <link href='http://fonts.googleapis.com/css?family=Lily+Script+One|Pacifico' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+
+<div class="wrapper">
+  <div class="sticky-bar">
+    <a class="brunch_title" href="#">Brunchover</a>
+  </div>
+</div>
+
+<body>
+  <div id="container">
+    <%= yield %>
+</div>
 
 </body>
 </html>
