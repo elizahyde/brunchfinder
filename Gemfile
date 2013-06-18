@@ -24,6 +24,7 @@ gem 'jquery-rails'
 
 # yelp gem
 gem 'yelpster'
+gem 'unicorn'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

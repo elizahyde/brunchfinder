@@ -2,10 +2,12 @@
 <p>Find me in app/views/brunch_finders/results.html.erb</p>
 
 <!--Need to show icon if they serve bloodies and/or mimosas-->
-<% get_bloodies.each do |y| %>
+<ul>
+  <% get_brunch.first(2).each do |response| %>
 
- <li><%= y[:name] %></li>
- <li><%= y[:neighborhoods] %></li>
- <li><%= y[:address] %></li>
+ <li><%= name %></li>
+ <li><%= distance %></li>
+ <li><%= display_phone %></li>
 
 <% end %>
+</ul>

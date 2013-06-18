@@ -10,6 +10,7 @@ class BrunchFindersController < ApplicationController
   end
 
   def results
+
   end
 
   def topspots
