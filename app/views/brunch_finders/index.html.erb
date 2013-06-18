@@ -2,7 +2,16 @@
 <p>Find me in app/views/brunch_finders/index.html.erb</p>
 
 <div class="searchbar">
+
   <form>
-      <span><input type="text" class="searchbox" value="Neighborhood, address, city"><input type="button" value="Search"></span>
+        <input type="text" class="searchbox" name="<% location %>" value=" Neighborhood or address, city, state">
+        <ul class="cravings-buttons">
+          <li><input type="button" value="Bloodies"></li>
+          <li><input type="button" value="Mimosas"></li>
+          <li><input type="button" value="Eggs"></li>
+          <li><input type="button" value="French Toast"></li>
+
+          <li><input type="button" value="Just find me brunch"><li>
+        </ul>
   </form>
 </div>

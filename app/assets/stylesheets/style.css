@@ -1,7 +1,11 @@
 body {
   font-family: verdana;
+  color: #553322;
   margin: 0;
   padding: 0;
+}
+h1, h2, h3, h4, h5 {
+  color: #553322;
 }
 
 .wrapper {
@@ -45,8 +49,25 @@ body {
   padding:40px 25px;
 }
 
+.searchbar ul {
+  list-style-type: none;
+}
 .searchbox {
   width: 350px;
   height: 25px;
-  rounded-
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  color: gray;
+}
+
+.cravings-buttons {
+  overflow: hidden;
+  text-align: center;
+}
+
+.cravings-buttons li{
+  list-style-type: none;
+  display: inline-block;
+
 }
