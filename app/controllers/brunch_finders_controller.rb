@@ -3,15 +3,24 @@ class BrunchFindersController < ApplicationController
   end
 
   def get_address
-    #Add Geocoder gem get location location code here
+    location = params[:location]
+    response = {}
+    response[:location] = location
   end
 
-  def search
-  end
+  # def search
+  # end
 
   def results
+    @location = params[:location]
 
-  end
+    if params[:query] != nil
+      location = params[:query]
+      @s = Search.brunch_finders_details(location)
+    else
+      @s = Search.brunch_finders_details(@location_)
+    end
+end
 
   def topspots
     #top 5 spots by drinks and top 5 based on food. could be static and pulled by articles?

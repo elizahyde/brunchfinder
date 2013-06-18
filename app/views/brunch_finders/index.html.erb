@@ -1,17 +1,14 @@
-<h1>BrunchFinders#index</h1>
-<p>Find me in app/views/brunch_finders/index.html.erb</p>
-
 <div class="searchbar">
 
-  <form>
-        <input type="text" class="searchbox" name="<% location %>" value=" Neighborhood or address, city, state">
+  <form method="get" action="/brunch_finders/results">
+        <input type="text" class="searchbox" name="<% @location %>" value=" Neighborhood or address, city, state">
         <ul class="cravings-buttons">
           <li><input type="button" value="Bloodies"></li>
           <li><input type="button" value="Mimosas"></li>
           <li><input type="button" value="Eggs"></li>
           <li><input type="button" value="French Toast"></li>
 
-          <li><input type="button" value="Just find me brunch"><li>
+          <li><input type="button" value="Just find me brunch" id="submit"><li>
         </ul>
   </form>
 </div>

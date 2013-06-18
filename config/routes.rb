@@ -1,15 +1,18 @@
 Brunchfinder::Application.routes.draw do
-  get "brunch_finders/index"
 
-  get "brunch_finders/get_address"
+  get '/results' => 'brunch_finders#results'
 
-  get "brunch_finders/search"
+  get '/coups' => 'brunch_finders#coups'
 
-  get "brunch_finders/results"
+  get '/topspots' => 'brunch_finders#topspots'
 
-  get "brunch_finders/topspots"
+  get '/get_address' => 'brunch_finders#get_address'
 
-  get "brunch_finders/coups"
+  root :to => 'brunch_finders#index'
+  # match "brunch_finders/index"
+  # resources :brunch_finders
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
