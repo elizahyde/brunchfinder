@@ -16,9 +16,10 @@ class BrunchFindersController < ApplicationController
 
     if params[:query] != nil
       location = params[:query]
-      @s = Search.brunch_finders_details(location)
+      @s = Search.get_brunch(location)
     else
-      @s = Search.brunch_finders_details(@location_)
+      @s = Search.get_brunch(@location)
+
     end
 end
 
