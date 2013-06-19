@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'unicorn'
 gem 'rails', '3.2.13'
+gem "pry-rails"
+gem "pry-debugger"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

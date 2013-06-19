@@ -1,14 +1,14 @@
 <div class="searchbar">
 
-  <form method="get" action="/brunch_finders/results">
-        <input type="text" class="searchbox" name="<% @location %>" value=" Neighborhood or address, city, state">
+  <form method="get" action="/results">
+        <input type="text" class="searchbox" name="location" value=" Neighborhood or address, city, state" onFocus="this.value=''">
         <ul class="cravings-buttons">
-          <li><input type="button" value="Bloodies"></li>
-          <li><input type="button" value="Mimosas"></li>
-          <li><input type="button" value="Eggs"></li>
-          <li><input type="button" value="French Toast"></li>
+          <li><button>Bloodies</button></li>
+          <li><button>Mimosas</button></li>
+          <li><button>Eggs</button></li>
+          <li><button>French Toast</button></li>
 
-          <li><input type="button" value="Just find me brunch" id="submit"><li>
+          <li><button>Just Find Brunch</button><li>
         </ul>
   </form>
 </div>

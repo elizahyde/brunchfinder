@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5 {
 .brunch_title {
   background-color: #ffc940;
   font-family: 'Pacifico', cursive;
-  color: ;
+  color: white;
   font-size: 28px;
   text-decoration: none;
   color: white;
@@ -69,5 +69,14 @@ h1, h2, h3, h4, h5 {
 .cravings-buttons li{
   list-style-type: none;
   display: inline-block;
+
+}
+
+.nostyle {
+  list-style-type: none;
+}
+
+.nostyle a {
+  text-decoration: none;
 
 }

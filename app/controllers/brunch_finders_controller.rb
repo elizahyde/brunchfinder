@@ -4,7 +4,6 @@ class BrunchFindersController < ApplicationController
 
   def get_address
     location = params[:location]
-    response = {}
     response[:location] = location
   end
 
@@ -14,13 +13,7 @@ class BrunchFindersController < ApplicationController
   def results
     @location = params[:location]
 
-    if params[:query] != nil
-      location = params[:query]
-      @s = Search.get_brunch(location)
-    else
-      @s = Search.get_brunch(@location)
-
-    end
+    @j = Search.get_brunch(@location)
 end
 
   def topspots
