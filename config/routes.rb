@@ -1,6 +1,6 @@
 Brunchfinder::Application.routes.draw do
 
-  get '/search' => 'goodfood#search'
+  get '/search' => 'brunch_finders#search'
 
   get '/results' => 'brunch_finders#results'
 
