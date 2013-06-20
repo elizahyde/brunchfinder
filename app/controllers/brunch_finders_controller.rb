@@ -12,7 +12,17 @@ class BrunchFindersController < ApplicationController
 
   def results
     @location = params[:location]
-    @j = Search.get_brunch(@location)
+
+    if params[:bloodies]
+      @j = Search.get_bloodies(@location)
+    elsif params[:mimosas]
+      @j = Search.get_mimosas(@location)
+    elsif params[:eggs]
+      @j = Search.get_eggs(@location)
+    elsif params[:frenchtoast]
+      @j = Search.get_frenchtoast(@location)
+    else
+      @j = Search.get_brunch(@location)
 end
 
   def topspots

@@ -1,9 +1,6 @@
-#this is the code with the APIs for searching for brunch locations
+# this is the code with the APIs for searching for brunch locations
 
 # need to search for mimosa, bloodies, eggs, french toastin all results to show icons
-
-
-
 
 class Search
     # perform a general search for brunch
@@ -13,6 +10,7 @@ class Search
     # search for businesses via location (neighbourhood in this situation)
     request = Yelp::V2::Search::Request::Location.new(
       :category_filter => "breakfast_brunch",
+      # :tags =>
       :neighborhood => location,
       :consumer_key => ENV["YELPCONKEY"],
       :consumer_secret => ENV["YELPCONSECRET"],
@@ -50,4 +48,39 @@ class Search
     #  joint_info
 
   end
+
+  def self.get_bloodies(location)
+    # construct a client instance
+    client = Yelp::Client.new
+    # search for businesses via location (neighbourhood in this situation)
+    request = Yelp::V2::Search::Request::Location.new(
+      :category_filter => "breakfast_brunch",
+      :term => ['bloody maries', 'bloody mary', 'bloody marys'],
+      :neighborhood => location,
+      :consumer_key => ENV["YELPCONKEY"],
+      :consumer_secret => ENV["YELPCONSECRET"],
+      :token => ENV["YELPTOKEN"],
+      :token_secret => ENV["YELPTOKESECRET"]
+    )
+
+    response = client.search(request)['businesses']
+
+    results = {}
+    response.each do |j|
+        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]}
+    end
+    return results
+  end
+
+
+
+
+
+
+
+
+
+
+
+
 end
