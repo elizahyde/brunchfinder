@@ -55,7 +55,7 @@ class Search
     # search for businesses via location (neighbourhood in this situation)
     request = Yelp::V2::Search::Request::Location.new(
       :category_filter => "breakfast_brunch",
-      :term => ['bloody maries', 'bloody mary', 'bloody marys'],
+      :term => [ "bloody mary", "bloody marys", "bloody maries" ],
       :neighborhood => location,
       :consumer_key => ENV["YELPCONKEY"],
       :consumer_secret => ENV["YELPCONSECRET"],
@@ -72,15 +72,73 @@ class Search
     return results
   end
 
+  def self.get_mimosas(location)
+    # construct a client instance
+    client = Yelp::Client.new
+    # search for businesses via location (neighbourhood in this situation)
+    request = Yelp::V2::Search::Request::Location.new(
+      :category_filter => "breakfast_brunch",
+      :term => [ "mimosa", "mimosas" ],
+      :neighborhood => location,
+      :consumer_key => ENV["YELPCONKEY"],
+      :consumer_secret => ENV["YELPCONSECRET"],
+      :token => ENV["YELPTOKEN"],
+      :token_secret => ENV["YELPTOKESECRET"]
+    )
 
+    response = client.search(request)['businesses']
 
+    results = {}
+    response.each do |j|
+        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]}
+    end
+    return results
+  end
 
+  def self.get_eggs(location)
+    # construct a client instance
+    client = Yelp::Client.new
+    # search for businesses via location (neighbourhood in this situation)
+    request = Yelp::V2::Search::Request::Location.new(
+      :category_filter => "breakfast_brunch",
+      :term => [ "omelette", "scrambled eggs", "frittata", "eggs"],
+      :neighborhood => location,
+      :consumer_key => ENV["YELPCONKEY"],
+      :consumer_secret => ENV["YELPCONSECRET"],
+      :token => ENV["YELPTOKEN"],
+      :token_secret => ENV["YELPTOKESECRET"]
+    )
 
+    response = client.search(request)['businesses']
 
+    results = {}
+    response.each do |j|
+        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]}
+    end
+    return results
+  end
 
+  def self.get_frenchtoast(location)
+    # construct a client instance
+    client = Yelp::Client.new
+    # search for businesses via location (neighbourhood in this situation)
+    request = Yelp::V2::Search::Request::Location.new(
+      :category_filter => "breakfast_brunch",
+      :term => "french toast",
+      :neighborhood => location,
+      :consumer_key => ENV["YELPCONKEY"],
+      :consumer_secret => ENV["YELPCONSECRET"],
+      :token => ENV["YELPTOKEN"],
+      :token_secret => ENV["YELPTOKESECRET"]
+    )
 
+    response = client.search(request)['businesses']
 
-
-
+    results = {}
+    response.each do |j|
+        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]}
+    end
+    return results
+  end
 
 end
