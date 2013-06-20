@@ -14,10 +14,10 @@ class Search
     request = Yelp::V2::Search::Request::Location.new(
       :category_filter => "breakfast_brunch",
       :neighborhood => location,
-      :consumer_key => ENV['YELPCONKEY'],
-      :consumer_secret => ENV['YELPCONSECRET'],
-      :token => ENV['YELPTOKEN'],
-      :token_secret => ENV['YELPTOKESECRET'],
+      :consumer_key => ENV["YELPCONKEY"],
+      :consumer_secret => ENV["YELPCONSECRET"],
+      :token => ENV["YELPTOKEN"],
+      :token_secret => ENV["YELPTOKESECRET"]
     )
     # This line sets a variable 'response' equal to yelp APIs response
     # and goes into the children of 'businesses' as all reponse parmeters
@@ -30,8 +30,7 @@ class Search
     # in console.
     results = {}
     response.each do |j|
-        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]
-        }
+        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]}
     end
     return results
 

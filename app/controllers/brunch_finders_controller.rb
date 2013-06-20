@@ -12,7 +12,6 @@ class BrunchFindersController < ApplicationController
 
   def results
     @location = params[:location]
-
     @j = Search.get_brunch(@location)
 end
 
