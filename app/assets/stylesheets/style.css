@@ -18,15 +18,14 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  height: 50px;
-  background-color: #ffc940;
+  height: 60px;
 }
 
 .brunch_title {
   background-color: #ffc940;
   font-family: 'Pacifico', cursive;
   color: white;
-  font-size: 28px;
+  font-size: 32px;
   text-decoration: none;
   color: white;
 }

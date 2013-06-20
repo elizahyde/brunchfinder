@@ -3,7 +3,13 @@
 <div
 <ul>
   <% @j.first(10).each do |key, value| %>
-  <li class="nostyle"><a href="<%= value[:url] %>"><%= key %></a>    <%= value[:phone] %>  </li>
+  <li class="nostyle"><a href="<%= value[:url] %>"><%= key %></a></li>
+      <li class="nostyle"><img src="<%= value[:rating] %>"></li>
+      <li class="nostyle"><% if @bloodies == "bloodiesyes" %> Bloodies!></li> <%end %>
+      <li class="nostyle"><%= value[:phone] %></li>
+      <li class="nostyle"><%= value[:address].first %>, <%= value[:city] %></li>
+      <li class="nostyle"><% if value[:ydeals] == true %><a href="<%= value[:ydeals_url] %>">Click for deal!</a></li>
+      <% end %><br>
 
 <% end %>
 </ul>

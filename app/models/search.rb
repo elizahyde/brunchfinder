@@ -67,7 +67,9 @@ class Search
 
     results = {}
     response.each do |j|
-        results["#{j["name"]}"] = {phone:j["display_phone"], url:j["url"]}
+        results["#{j["name"]}"] = {phone:j["phone"], url:j["url"],
+          rating:j["rating_img_url_small"], address:j["location"]["address"], city:j["location"]["city"],
+          ydeals:["deals"], ydeals_url:["deals.url"]}
     end
     return results
   end
