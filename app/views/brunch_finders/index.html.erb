@@ -11,14 +11,14 @@
             <li><input type="image" name="search_type" src="/assets/eggs.png" alt="Submit" alt="Submit" value="Eggs"></li>
             <li><input type="image" name="search_type" src="/assets/pancakes.png" alt="Submit" value="Pancakes"></li>
           </ul>
-          <br><input type="submit" class="button orange" name="search_type" value="I want it all!">
+          <input type="submit" class="button orange" name="search_type" value="I want it all!">
     </form>
   </div>
 </div>
 
 <div id="photogrid">
   <ul>
-    <% @instagram.first(12).each do |instagram| %>
+    <% @instagram.first(15).each do |instagram| %>
        <li> <%= image_tag instagram.images.low_resolution.url %><li>
         <% end %>
   </ul>

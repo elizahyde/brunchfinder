@@ -39,7 +39,7 @@ p, h1, h2, h3, h4, h5, li {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 10%;
+  top: 60px;
   left:0;
   z-index: 2;
 }
@@ -47,17 +47,15 @@ p, h1, h2, h3, h4, h5, li {
   text-align: center;
 }
 
-
-
-
-#photogrid li{
-z-index: 1;
+#photogrid {
+  margin: auto;
 }
 
 #photogrid li{
   display: block;
   float: left;
   position: relative;
+  z-index: 1;
 }
 
 #photogrid img {
@@ -65,44 +63,15 @@ z-index: 1;
   width: 100%;
 }
 
-@media screen and (min-width:1024px) {
-  li {
-    width:20%;
-  }
-}
-@media screen and (max-width:1024px) {
-  li {
-    width:25%;
-  }
-}
-@media screen and (max-width:800px) {
-  li {
-    width:50%;
-  }
-}
-@media screen and (max-width:480px) {
-  li {
-    width:100%;
-  }
-}
-
-
-
-.search {
-  padding:6px 15px 6px 30px;
-  margin:3px;
-/*  background: url('./images/search.png') no-repeat 8px 6px;*/
-}
-
 .searchbkg {
-  width: 500px;
-  height: 250px;
+  width: 300px;
+  height: 260px;
   position: absolute;
   left:0;
   right:0;
   margin-left:auto;
   margin-right:auto;
-  top: 25%;
+  top: 15%;
   z-index: 3;
   background-color: #553322;
   filter:alpha(opacity=80); /* IE */
@@ -115,10 +84,10 @@ z-index: 1;
 
 .searchbox {
   position: absolute;
-  top: 5%; left: 0;
   width: 100%; height: 100%;
   z-index: 4;
   text-align: center;
+  padding: 0 5px 0 5px 0;
 }
 
 .searchbox h2 {
@@ -130,7 +99,7 @@ z-index: 1;
   z-index: 5;
 }
 .searchbar {
-  width: 350px;
+  width: 200px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -146,13 +115,14 @@ z-index: 1;
 .cravings-buttons {
   overflow: hidden;
   text-align: center;
-  left:-50%;
 }
 
 .cravings-buttons li{
   list-style-type: none;
   display: inline-block;
-  float: left;
+  margin: 5px;
+  /*float: left;*/
+
 }
 
 .nostyle {
@@ -165,6 +135,7 @@ z-index: 1;
 }
 
 .button {
+  margin: 5px;
   display: inline-block;
   outline: none;
   cursor: pointer;
@@ -207,4 +178,37 @@ z-index: 1;
   background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
   background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+@media screen and (min-width:1024px) {
+  #photogrid li {
+    width:20%;
+  }
+/*  .searchbkg {
+    width:20%;
+  }*/
+}
+@media screen and (max-width:1024px) {
+  #photogrid li {
+    width:25%;
+  }
+/*  .searchbkg {
+    width:25%;
+  }*/
+}
+@media screen and (max-width:800px) {
+  #photogrid li {
+    width:50%;
+  }
+/*  .searchbkg {
+    width:50%;
+  }*/
+}
+@media screen and (max-width:480px) {
+  #photogrid li {
+    width:100%;
+  }
+/*  .searchbkg {
+    width:100%;
+  }*/
 }
