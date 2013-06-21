@@ -1,15 +1,16 @@
-<h2>Your best picks in <%= @location.capitalize %></h2>
+<div class="results">
+  <h2>Your best picks in <%= @location.capitalize %></h2>
 <!--Need to show icon if they serve bloodies and/or mimosas-->
-<div
 <ul>
   <% @j.first(10).each do |key, value| %>
-  <li class="nostyle"><a href="<%= value[:url] %>"><%= key %></a></li>
+      <li class="nostyle"><a href="<%= value[:url] %>"><%= key %></a></li>
+      <li class="nostyle"><% if value[:ydeals] %> Deal: <%= value[:ydealsurl] %> <% else %>.<% end %></li>
       <li class="nostyle"><img src="<%= value[:rating] %>"></li>
-      <li class="nostyle"><% if @bloodies == "bloodiesyes" %> Bloodies!></li> <%end %>
       <li class="nostyle"><%= value[:phone] %></li>
-      <li class="nostyle"><%= value[:address].first %>, <%= value[:city] %></li>
-      <li class="nostyle"><% if value[:ydeals] == true %><a href="<%= value[:ydeals_url] %>">Click for deal!</a></li>
-      <% end %><br>
+      <li class="nostyle"><% if value[:address].present? %><%= value[:address].first %>, <%= value[:city] %> <% else %> <%= value[:city] %> <% end %> </li>
 
-<% end %>
+      <br>
+
+    <% end %>
 </ul>
+<div>

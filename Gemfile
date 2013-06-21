@@ -30,6 +30,7 @@ gem 'yelpster'
 #for geocoding yeey yeey
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'instagram'
 
 group :development do
   gem "better_errors"

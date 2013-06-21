@@ -1,0 +1,18 @@
+
+
+
+
+<!--       <li class="nostyle"><% if @bloodies == "bloodiesyes" %> Bloodies!></li> <%end %>
+
+
+
+  <% if value[:address] %> <%= value[:address].first %> , <%= value[:city] %> <% else %> -->
+
+
+    {
+    "is_popular"=>true,
+    "what_you_get"=>"You get a voucher redeemable for $20 at Triptych.\nPrint out your voucher, or redeem on your phone with the <a href=\"http://www.yelp.com/yelpmobile\">Yelp app</a>.",
+    "time_start"=>1363061566,
+    "title"=>"$10 for $20",
+    "url"=>"http://www.yelp.com/deals/triptych-san-francisco-2",
+    "additional_restrictions"=>"Promotion lasts for 1 year from date of purchase. After that period, your voucher is redeemable for the amount you paid. Not valid with other vouchers, certificates, or offers. Gratuity not included; please tip on full value. Must be 21 or older. Must use in a single visit. Only 1 voucher(s) can be purchased and redeemed per person. Up to 2 can be purchased as gifts for others. Subject to the <a target=\"_blank\" href=\"http://www.yelp.com/tos/general_b2c_us_20120911\">General Terms</a>.", "options"=>[{"original_price"=>2000, "title"=>"$10 for $20", "price"=>1000, "purchase_url"=>"https://www.yelp.com/checkout/deal/Dmes34Oi-vzoU-GXYB1-jQ", "remaining_count"=>10, "formatted_original_price"=>"$20", "formatted_price"=>"$10", "is_quantity_limited"=>true}], "important_restrictions"=>"Not valid for take-out.\nLimit 1 voucher(s) per table.", "image_url"=>"http://s3-media3.ak.yelpcdn.com/dphoto/WKLz_TBERWeydzSEIuom7A/m.jpg", "id"=>"yKWzImDotgrffTgW9A2dXA", "currency_code"=>"USD"}

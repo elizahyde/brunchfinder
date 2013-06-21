@@ -1,14 +1,12 @@
 class BrunchFindersController < ApplicationController
   def index
+    @instagram = Instagram.tag_recent_media("brunch")
   end
 
   def get_address
     location = params[:location]
     response[:location] = location
   end
-
-  # def search
-  # end
 
   def results
     @location = params[:location]
@@ -21,8 +19,8 @@ class BrunchFindersController < ApplicationController
     elsif params[:search_type] == "Eggs"
       @j = Search.get_eggs(@location)
       # do stuff
-    elsif params[:search_type] == "French Toast"
-      @j = Search.get_frenchtoast(@location)
+    elsif params[:search_type] == "Pancakes"
+      @j = Search.get_pancakes(@location)
       # do stuff
     else
       @j = Search.get_brunch(@location)

@@ -1,14 +1,25 @@
-<div class="searchbar">
 
-  <form method="get" action="/results">
-        <input type="text" class="searchbox" autosave="saveval" name="location" placeholder="Enter a neighborhood...">
-        <ul class="cravings-buttons">
-          <li><input type="submit" name="search_type" value="Bloodies"></li>
-          <li><input type="submit" name="search_type" value="Mimosas"></li>
-          <li><input type="submit" name="search_type" value="Eggs"></li>
-          <li><input type="submit" name="search_type" value="French Toast"></li>
-        </ul>
-        <input type="submit" name="search_type" value="Just Find Me Brunch">
+<div class="searchbkg">
+  <div class="searchbox"><br>
+    <h2>Enter your location and click your craving</h2><br><br>
+    <form method="get" action="/results">
+          <input type="text" class="searchbar" autosave="saveval" name="location">
+          <br><br>
+          <ul class="cravings-buttons">
+            <li><input type="image" name="search_type" src="/assets/bloodies.png" alt="Submit" value="Bloodies"></li>
+            <li><input type="image" name="search_type" src="/assets/mimosas.png" alt="Submit" value="Mimosas"></li>
+            <li><input type="image" name="search_type" src="/assets/eggs.png" alt="Submit" alt="Submit" value="Eggs"></li>
+            <li><input type="image" name="search_type" src="/assets/pancakes.png" alt="Submit" value="Pancakes"></li>
+          </ul>
+          <br><input type="submit" class="button orange" name="search_type" value="I want it all!">
+    </form>
+  </div>
+</div>
 
-  </form>
+<div id="photogrid">
+  <ul>
+    <% @instagram.first(12).each do |instagram| %>
+       <li> <%= image_tag instagram.images.low_resolution.url %><li>
+        <% end %>
+  </ul>
 </div>
