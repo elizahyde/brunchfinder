@@ -1,6 +1,7 @@
-<div class="results">
+<div>
   <h2>Your best picks in <%= @location.capitalize %></h2>
 <!--Need to show icon if they serve bloodies and/or mimosas-->
+
 <ul>
   <% @j.first(10).each do |key, value| %>
       <li class="nostyle"><a href="<%= value[:url] %>"><%= key %></a></li>
@@ -14,3 +15,8 @@
     <% end %>
 </ul>
 <div>
+  <% @f.first(10).each do |f| %>
+  <li class="nostyle"> <%= @fname %></li>
+  <li class="nostyle"> <%= @furl %></li>
+  <% end %>
+</div>

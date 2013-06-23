@@ -11,6 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= script
+//= require jquery.geocomplete
+//= require jquery.geocomplete.min
+//= require script
 //= require jquery_ujs
 //= require_tree .

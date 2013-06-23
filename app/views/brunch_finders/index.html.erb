@@ -1,25 +1,55 @@
-
-<div class="searchbkg">
-  <div class="searchbox"><br>
-    <h2>Enter your location then click your craving</h2><br><br>
-    <form method="get" action="/results">
-          <input type="text" class="searchbar" autosave="saveval" name="location">
-          <br><br>
-          <ul class="cravings-buttons">
-            <li><input type="image" name="search_type" src="/assets/bloodies.png" alt="Submit" value="Bloodies"></li>
-            <li><input type="image" name="search_type" src="/assets/mimosas.png" alt="Submit" value="Mimosas"></li>
-            <li><input type="image" name="search_type" src="/assets/eggs.png" alt="Submit" alt="Submit" value="Eggs"></li>
-            <li><input type="image" name="search_type" src="/assets/pancakes.png" alt="Submit" value="Pancakes"></li>
-          </ul>
-          <input type="submit" class="button orange" name="search_type" value="I want it all!">
-    </form>
-  </div>
-</div>
-
 <div id="photogrid">
   <ul>
-    <% @instagram.first(15).each do |instagram| %>
+    <%# @instagram.first(20).each do |instagram| %>
        <li> <%= image_tag instagram.images.low_resolution.url %><li>
         <% end %>
   </ul>
 </div>
+
+<div class="searchbkg">
+  <div class="searchbox"><br>
+    <h2>Enter your location then click your craving</h2>
+    <!--Add google thing https://developers.google.com/maps/documentation/javascript/places#loading_the_library-->
+    <form method="get" action="/results">
+    <input type="text" class="searchbar" id="geolocale" autosave="saveval" name="location">
+
+      <label>Latitude</label>
+      <input name="lat" type="hidden">
+
+      <label>Longitude</label>
+      <input name="lng" type="hidden">
+
+      <label>Name</label>
+      <input name="name" type="hidden">
+
+      <label>Street Number</label>
+      <input name="street_number" type="hidden">
+
+      <label>State</label>
+      <input name="administrative_area_level_1" type="hidden">
+
+      <label>Country</label>
+      <input name="country" type="hidden">
+
+          <ul class="cravings-buttons">
+            <li><input class="button brown left" name="search_type" type="Submit" value="Bloodies"></li>
+            <li><input class="button brown middle" name="search_type" type="Submit" value="Mimosas"></li>
+            <li><input class="button brown middle" name="search_type" type="Submit" alt="Submit" value="Eggs"></li>
+            <li><input class="button brown right" name="search_type" type="Submit" value="Pancakes"></li>
+          </ul>
+          <input type="submit" class="button brown lonely" name="search_type" value="I want it all!">
+    </form>
+  </div>
+</div>
+<script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script>
+$(function() {
+  $("#geolocale").geocomplete({
+    details: "form"});
+
+  // Trigger geocoding request.
+  $("Submit").click(function(){
+    $("#geolocale").trigger("geocode");
+  });
+});
+</script>
