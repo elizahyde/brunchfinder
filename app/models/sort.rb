@@ -6,17 +6,20 @@ def compare_results
     if yaddress == faddress
       top_results # new array with just results that are yelp & 3sq. do get info.
 
-
-
       # Hit up 4sq again for deets
       venueids = @fids.join(",/venue/")
 
-      https://api.foursquare.com/v2/multi?requests=/venues/[venueids]&client_id=QAMMWL3IPTD0FRUH0DZLPKRHKQOHPF1GAHNJT0UR0XPPZGFL&client_secret=G5NQIEOK2UT3CO454VCXQVU2HFRXA4M4FNTPZOXAOWCBHQXO&v=20130623
+      response = HTTParty.get("https://api.foursquare.com/v2/multi?requests=/venues/#{[:venueids}&client_id=QAMMWL3IPTD0FRUH0DZLPKRHKQOHPF1GAHNJT0UR0XPPZGFL&client_secret=G5NQIEOK2UT3CO454VCXQVU2HFRXA4M4FNTPZOXAOWCBHQXO&v=20130623")
+      puts response.responses
 
-      Need from multi:
-      flikes_count:f["likes"]["count"], ftips_count:f["tips"]["count"], fphotos_count:f["photos"]["count"],fhereNow:f["hereNOw"]["count"],
+      response.each do |item|
+        top_results[f["id"]] =
+        flikes_count:f["likes"]["count"], ftips_count:f["tips"]["count"], fphotos_count:f["photos"]["count"],fhereNow:f["hereNOw"]["count"]}
+      end
+
       # fpopactions = 2*ftips_count + flikes_count + 2*fphotos_count
-      joint_info = {name:name,
+      joint_info = {id:fid,
+                    name:name,
                     distance:distance,
                     address:yaddress,
                     yrating:yrating,
