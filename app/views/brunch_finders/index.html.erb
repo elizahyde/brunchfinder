@@ -1,6 +1,6 @@
 <div id="photogrid">
   <ul>
-    <%# @instagram.first(20).each do |instagram| %>
+    <% @instagram.first(20).each do |instagram| %>
        <li> <%= image_tag instagram.images.low_resolution.url %><li>
         <% end %>
   </ul>
@@ -34,7 +34,7 @@
           <ul class="cravings-buttons">
             <li><input class="button brown left" name="search_type" type="Submit" value="Bloodies"></li>
             <li><input class="button brown middle" name="search_type" type="Submit" value="Mimosas"></li>
-            <li><input class="button brown middle" name="search_type" type="Submit" alt="Submit" value="Eggs"></li>
+            <li><input class="button brown middle" name="search_type" type="Submit" value="Eggs"></li>
             <li><input class="button brown right" name="search_type" type="Submit" value="Pancakes"></li>
           </ul>
           <input type="submit" class="button brown lonely" name="search_type" value="I want it all!">

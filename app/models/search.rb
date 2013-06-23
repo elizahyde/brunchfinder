@@ -6,14 +6,13 @@ class Search
     categoryids = '4d4b7105d754a06374d81259,4bf58dd8d48988d1d3941735,4bf58dd8d48988d1dc931735,4bf58dd8d48988d14f941735,4bf58dd8d48988d1c4941735,4bf58dd8d48988d157941735,4bf58dd8d48988d1c2941735,4bf58dd8d48988d1c19417354bf58dd8d48988d1c1941735,4bf58dd8d48988d1c0941735,4c2cd86ed066bed06c3c5209,4bf58dd8d48988d10d941735,4d4ae6fc7a7b7dea34424761,4bf58dd8d48988d155941735,4bf58dd8d48988d10c941735,4bf58dd8d48988d147941735,4bf58dd8d48988d17a941735,4bf58dd8d48988d16d941735,4bf58dd8d48988d143941735,4bf58dd8d48988d16a941735,4bf58dd8d48988d14e941735'
     response = client.search_venues(:radius => 6500, :categoryID => categoryids, :ll => latlng)
     results = {}
-    response.each do |f|
-      venues["#{f["name"]}"] = {faddress:f["location"]["address"], flikes_count:f["likes"]["count"]}
-    # Set Variables here: fname, faddress, ftips_count, flikes_count, fhereNow_count, flists_count, fphotos_count
-  end
+    binding.pry
+    response["groups"][0]["items"].each do |f|
+      results["#{f["name"]}"] = {faddress:f["location"]["address"], fid:f["id"], furl:f["canonicalUrl"]
+      }
+    end
   return results
   end
-
-
 
   def self.get_brunch(location)
     # construct a client instance
@@ -30,13 +29,24 @@ class Search
     )
 
     response = client.search(request)['businesses']
-    results = {}
+
+    yelp_results = {}  # This should be an array of hashes
+
     response.each do |j|
-      results["#{j["name"]}"] = {phone:j["phone"], url:j["url"],
-        rating:j["rating_img_url_small"], address:j["location"]["address"], city:j["location"]["city"]}
+      yelp_results["#{j["name"]}"] = {phone:j["phone"], url:j["url"], distance:j["distance"],
+        yrating:j["rating_img_url_small"], yaddress:j["location"]["address"], city:j["location"]["city"]}
+
+
+
     end
-    return results
   end
+
+
+
+# NEED TO FIX RESULTS CODES BELOW
+
+
+
 
   def self.get_bloodies(location)
     client = Yelp::Client.new
@@ -55,9 +65,8 @@ class Search
     results = {}
     response.each do |j|
       results["#{j["name"]}"] = {phone:j["phone"], url:j["url"],
-        rating:j["rating_img_url_small"], address:j["location"]["address"], city:j["location"]["city"],
-         ydeals:j["deals"], ydealsurl:j["deals.url"], ydeals_title:j["deals.title"]}
-      end
+        rating:j["rating_img_url_small"], yaddress:j["location"]["address"], city:j["location"]["city"]}
+    end
     return results
   end
 
@@ -79,8 +88,7 @@ class Search
     results = {}
     response.each do |j|
       results["#{j["name"]}"] = {phone:j["phone"], url:j["url"],
-        rating:j["rating_img_url_small"], address:j["location"]["address"], city:j["location"]["city"],
-        ydeals:j["deals"], ydealsurl:j["deals.url"], ydeals_title:j["deals.title"]}
+        rating:j["rating_img_url_small"], yaddress:j["location"]["address"], city:j["location"]["city"]}
     end
     return results
   end
@@ -103,8 +111,7 @@ class Search
     results = {}
     response.each do |j|
       results["#{j["name"]}"] = {phone:j["phone"], url:j["url"],
-        rating:j["rating_img_url_small"], address:j["location"]["address"], city:j["location"]["city"],
-        ydeals:j["deals"], ydealsurl:j["deals.url"], ydeals_title:j["deals.title"]}
+        rating:j["rating_img_url_small"], yaddress:j["location"]["address"], city:j["location"]["city"]}
     end
     return results
   end
@@ -127,8 +134,7 @@ class Search
     results = {}
     response.each do |j|
       results["#{j["name"]}"] = {phone:j["phone"], url:j["url"],
-        rating:j["rating_img_url_small"], address:j["location"]["address"], city:j["location"]["city"],
-        ydeals:j["deals"], ydealsurl:j["deals.url"], ydeals_title:j["deals.title"]}
+        rating:j["rating_img_url_small"], yaddress:j["location"]["address"], city:j["location"]["city"]}
     end
     return results
   end

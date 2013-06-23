@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery.geocomplete
 //= require jquery.geocomplete.min
 //= require script
+//= require jquery.isotope.min
 //= require jquery_ujs
 //= require_tree .
