@@ -1,16 +1,75 @@
 <div>
-  <h2>Your best picks in <%= @location.capitalize %></h2>
+  <h2>Your best picks</h2>
 <!--Need to show icon if they serve bloodies and/or mimosas-->
 
 <ul>
   <% @f.first(10).each do |key, value| %>
       <li class="nostyle"><a href="<%= value[:furl] %>"><%= key %></a></li>
-      <li class="nostyle"><% if value[:ydeals] %> Deal: <%= value[:ydealsurl] %> <% else %>.<% end %></li>
-      <li class="nostyle"><img src="<%= value[:rating] %>"></li>
-      <li class="nostyle"><%= value[:phone] %></li>
+      <li class="nostyle">There are <%= value[:fhereNow] %> people there now</li>
       <li class="nostyle"><% if value[:faddress].present? %><%= value[:faddress].first %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %> </li>
 
       <br>
 
     <% end %>
 </ul>
+
+<h3>Sort</h3>
+<ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
+      <li><a href="#sortBy=original-order" data-option-value="original-order" class="selected" data>original-order</a></li>
+      <li><a href="#sortBy=trustJoints" data-option-value="trustJoints">Trusted</a></li>
+      <li><a href="#sortBy=hereNow" data-option-value="hereNow">Here Now</a></li>
+      <li><a href="#sortBy=name" data-option-value="name">Name</a></li>
+</ul>
+<div id="container">
+  <div class="venue" data-symbol="H" data-category="other">
+        <p class="number">1</p>
+        <h3 class="symbol">H</h3>
+        <h2 class="name"><%= key %></h2>
+        <p class="weight">1.00794</p>
+      </div>
+
+
+      <div class="venue" data-symbol="He" data-category="noble-gas">
+        <p class="number">2</p>
+        <h3 class="symbol">He</h3>
+        <h2 class="name">Helium</h2>
+        <p class="weight">4.002602</p>
+      </div>
+
+</div>
+
+<script>
+    $(function(){
+
+      var $container = $('#container');
+
+      $container.isotope({
+        itemSelector: '.venue'
+        layoutMode : 'masonry'
+
+        getSortData : {
+          name : function ( $elem ) {
+            return $elem.find('.name').text();
+          },
+          hereNow : function ( $elem ) {
+            return parseInt($elem.find('.hereNow').text() );
+          },
+          trustJoints : function ( $elem ) {
+            return $elem.find('.trustJoints').int();
+          }
+        }
+
+        // options...
+          resizable: false, // disable normal resizing
+
+          // set columnWidth to a percentage of container width
+          masonry: { columnWidth: $container.width() / 5 }
+      });
+      // update columnWidth on window resize
+      $(window).smartresize(function(){
+        $container.isotope({
+          // update columnWidth to a percentage of container width
+          masonry: { columnWidth: $container.width() / 5 }
+        });
+    });
+  </script>

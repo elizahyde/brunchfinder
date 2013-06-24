@@ -7,27 +7,27 @@ class Search
     # response = client.search_venues(:radius => 6500, :categoryID => categoryids, :ll => latlng)
     # results = {}
 
-    # response["venues"][0].each do |item|
+    # response["response"]["groups"][0]["items"][0]["venue"].each do |item|
     #   results[f["name"]] = {fid:f["id"], furl:f["canonicalUrl"], faddress:f["location"]["address"], fcity:f["location"]["city"],
     #   fhereNow:f["hereNOw"]["count"]
-    end
-  return results
   end
 # We are going to use http yo
   def self.get_brunch(latlng)
 
       response = HTTParty.get("https://api.foursquare.com/v2/venues/explore?ll=#{latlng}&query=brunch&client_id=QAMMWL3IPTD0FRUH0DZLPKRHKQOHPF1GAHNJT0UR0XPPZGFL&client_secret=G5NQIEOK2UT3CO454VCXQVU2HFRXA4M4FNTPZOXAOWCBHQXO&v=20130623")
-      binding.pry
       results = {}
-      response["groups"][0].each do |item|
-            results[f["name"]] = {fid:f["id"], furl:f["canonicalUrl"], faddress:f["location"]["address"], fcity:f["location"]["city"],
-            fhereNow:f["hereNOw"]["count"]flikes_count:f["likes"]["count"], ftips_count:f["tips"]["count"] ftips_items:f["tips"]["items"],
-            fphotos_count:f["photos"]["count"],}
-          }
-      end
-  end
 
+      response["response"]["groups"][0]["items"].each do |f|
+        results[f["venue"]["name"]] = {fid:f["venue"]["id"], furl:f["venue"]["canonicalUrl"], faddress:f["venue"]["location"]["address"], fcity:f["venue"]["location"]["city"],
+          totalCheckins:f["venue"]["stats"]["checkinsCount"],
+          flikes_count:f["venue"]["likes"]["count"], ftips_count:f["venue"]["stats"]["tipCount"],
+          fhereNow:f["venue"]["hereNow"]["count"],fphotos_count:f["venue"]["photos"]["count"]}
+
+      end
+
+    return results
   end
+# Might be US only: price_tier:f["price"]["tier"], open_now:["hours"]["isOpen"]
 
   def self.get_bloodies(location)
   end
@@ -40,3 +40,4 @@ class Search
 
   def self.get_pancakes(location)
   end
+end
