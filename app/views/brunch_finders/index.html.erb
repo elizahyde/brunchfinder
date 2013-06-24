@@ -8,26 +8,20 @@
 
 <div class="searchbkg">
   <div class="searchbox"><br>
-    <h2>Enter your location then click your craving</h2>
+    <h2>Enter your location then follow your craving</h2>
+    <br>
     <form method="get" action="/results">
     <input type="text" class="searchbar" id="geolocale" autosave="saveval" name="location">
 
-      <label>Latitude</label>
       <input name="lat" type="hidden">
-
-      <label>Longitude</label>
       <input name="lng" type="hidden">
-
-      <label>Name</label>
       <input name="name" type="hidden">
-
+      <br><br>
           <ul class="cravings-buttons">
             <li><input class="button brown left" name="search_type" type="Submit" value="Bloodies"></li>
             <li><input class="button brown middle" name="search_type" type="Submit" value="Mimosas"></li>
-            <li><input class="button brown middle" name="search_type" type="Submit" value="Eggs"></li>
-            <li><input class="button brown right" name="search_type" type="Submit" value="Pancakes"></li>
+            <li><input  class="button brown right" name="search_type" type="submit" value="I want it all!"></li>
           </ul>
-          <input type="submit" class="button brown lonely" name="search_type" value="I want it all!">
     </form>
   </div>
 </div>

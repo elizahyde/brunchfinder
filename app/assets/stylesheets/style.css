@@ -23,6 +23,9 @@ p, h1, h2, h3, h4, h5, li {
   text-align: center;
   height: 50px;
   z-index: 1000;
+  -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
 }
 
 .brunch_title {
@@ -35,7 +38,7 @@ p, h1, h2, h3, h4, h5, li {
   z-index: 10001;
 }
 
-.container {
+.body {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -66,7 +69,7 @@ p, h1, h2, h3, h4, h5, li {
 
 .searchbkg {
   width: 350px;
-  height: 260px;
+  height: 200px;
   position: absolute;
   left:0;
   right:0;
@@ -88,6 +91,9 @@ p, h1, h2, h3, h4, h5, li {
   z-index: 4;
   text-align: center;
   padding: 0 5px 0 5px 0;
+  -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
 }
 
 .searchbox h2 {
@@ -103,21 +109,19 @@ p, h1, h2, h3, h4, h5, li {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+
   background-color: #F9F9F9;
   z-index: 6;
   text-align: center;
-  font-family: verdana;
-  font-size: 14px;
 }
 
 .cravings-buttons {
-  overflow: hidden;
   text-align: center;
+  display: inline-block;
 }
 
 .cravings-buttons li{
   list-style-type: none;
-  display: inline-block;
   float: left;
 }
 
@@ -139,10 +143,9 @@ p, h1, h2, h3, h4, h5, li {
   padding: 8px 12px;
   border-radius: 3px;
   -moz-border-radius: 3px;
-  box-shadow: inset 0px 0px 2px #fff;
-  -o-box-shadow: inset 0px 0px 2px #fff;
-  -webkit-box-shadow: inset 0px 0px 2px #fff;
-  -moz-box-shadow: inset 0px 0px 2px #fff;
+  -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
 }
 
 .button:active {

@@ -1,41 +1,21 @@
 <div>
-  <h2>Your best picks</h2>
 <!--Need to show icon if they serve bloodies and/or mimosas-->
-
-<ul>
-  <% @f.first(10).each do |key, value| %>
-      <li class="nostyle"><a href="<%= value[:furl] %>"><%= key %></a></li>
-      <li class="nostyle">There are <%= value[:fhereNow] %> people there now</li>
-      <li class="nostyle"><% if value[:faddress].present? %><%= value[:faddress].first %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %> </li>
-
-      <br>
-
-    <% end %>
+<section class="clearfix">
+<ul id="sort-by" class="cravings-buttons" data-option-key="sortBy">
+      <li><a href="#sortBy=totalCheckins" data-option-value="totalCheckins" class="button brown left">Top Spot</a></li>
+      <li><a href="#sortBy=hereNow" data-option-value="hereNow" class="button brown middle">Popular Now</a></li>
+      <li><a href="#sortBy=name" data-option-value="name" class="button brown right">Name</a></li>
 </ul>
-
-<h3>Sort</h3>
-<ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
-      <li><a href="#sortBy=original-order" data-option-value="original-order" class="selected" data>original-order</a></li>
-      <li><a href="#sortBy=trustJoints" data-option-value="trustJoints">Trusted</a></li>
-      <li><a href="#sortBy=hereNow" data-option-value="hereNow">Here Now</a></li>
-      <li><a href="#sortBy=name" data-option-value="name">Name</a></li>
-</ul>
-<div id="container">
-  <div class="venue" data-symbol="H" data-category="other">
-        <p class="number">1</p>
-        <h3 class="symbol">H</h3>
-        <h2 class="name"></h2>
-        <p class="weight">1.00794</p>
+</section>
+<div id="container" class="clearfix">
+  <% @f.first(15).each do |key, value| %>
+  <div class="venue" style="background-image: url(http://maps.googleapis.com/maps/api/staticmap?center=<%= value[:flat] %>,<%= value[:flng] %>&zoom=16&size=420x420&sensor=false);">
+        <p class="totalCheckins"><%= value[:totalCheckins] %></p>
+        <h3 class="hereNow"><%= value[:fhereNow] %></h3>
+        <h2 class="name"><a href="<%= value[:furl] %>" alt="Details" target="_blank"><%= key %></a></h2>
+        <p class="address"><% if value[:faddress] %><%= value[:faddress] %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %> </p>
       </div>
-
-
-      <div class="venue" data-symbol="He" data-category="noble-gas">
-        <p class="number">2</p>
-        <h3 class="symbol">He</h3>
-        <h2 class="name">Helium</h2>
-        <p class="weight">4.002602</p>
-      </div>
-
+      <%end %>
 </div>
 
 <script>
@@ -44,22 +24,20 @@
       var $container = $('#container');
 
       $container.isotope({
-        itemSelector: '.venue'
-        layoutMode : 'masonry'
+        itemSelector: '.venue',
+        layoutMode : 'masonry',
 
         getSortData : {
           name : function ( $elem ) {
             return $elem.find('.name').text();
           },
           hereNow : function ( $elem ) {
-            return parseInt($elem.find('.hereNow').text() );
+            return parseInt($elem.find('.hereNow').text(), 10 );
           },
-          trustJoints : function ( $elem ) {
-            return $elem.find('.trustJoints').int();
+          totalCheckins : function ( $elem ) {
+            return parseInt($elem.find('.totalCheckins').text(), 10;
           }
         }
-
-        // options...
           resizable: false, // disable normal resizing
 
           // set columnWidth to a percentage of container width
@@ -71,5 +49,14 @@
           // update columnWidth to a percentage of container width
           masonry: { columnWidth: $container.width() / 5 }
         });
+
+        $('#sort-by a').click(function(){
+          // get href attribute, minus the '#'
+          var sortName = $(this).attr('href').slice(1);
+          $('#container').isotope({ sortBy : sortName });
+          return false;
+        });
+
+
     });
   </script>
