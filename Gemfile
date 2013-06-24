@@ -11,11 +11,9 @@ end
 gem 'jquery-rails'
 gem 'unicorn'
 
-gem 'yelpster'
 gem 'instagram'
 gem 'foursquare2'
 gem 'json' #json parsing
-gem 'amatch' # Aproximate string matching
 gem 'httparty'
 
 group :development do

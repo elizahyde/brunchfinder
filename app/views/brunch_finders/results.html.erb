@@ -3,12 +3,12 @@
 <!--Need to show icon if they serve bloodies and/or mimosas-->
 
 <ul>
-  <% @j.first(10).each do |key, value| %>
-      <li class="nostyle"><a href="<%= value[:url] %>"><%= key %></a></li>
+  <% @f.first(10).each do |key, value| %>
+      <li class="nostyle"><a href="<%= value[:furl] %>"><%= key %></a></li>
       <li class="nostyle"><% if value[:ydeals] %> Deal: <%= value[:ydealsurl] %> <% else %>.<% end %></li>
       <li class="nostyle"><img src="<%= value[:rating] %>"></li>
       <li class="nostyle"><%= value[:phone] %></li>
-      <li class="nostyle"><% if value[:address].present? %><%= value[:address].first %>, <%= value[:city] %> <% else %> <%= value[:city] %> <% end %> </li>
+      <li class="nostyle"><% if value[:faddress].present? %><%= value[:faddress].first %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %> </li>
 
       <br>
 

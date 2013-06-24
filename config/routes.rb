@@ -4,12 +4,6 @@ Brunchfinder::Application.routes.draw do
 
   get '/results' => 'brunch_finders#results'
 
-  get '/coups' => 'brunch_finders#coups'
-
-  get '/topspots' => 'brunch_finders#topspots'
-
-  get '/get_address' => 'brunch_finders#get_address'
-
   root :to => 'brunch_finders#index'
   # match "brunch_finders/index"
   # resources :brunch_finders
