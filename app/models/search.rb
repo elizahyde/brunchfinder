@@ -10,6 +10,10 @@ class Search
         fhereNow:f["venue"]["hereNow"]["count"],fphotos_count:f["venue"]["photos"]["count"]}
     end
   return results
+  @instagram = Instagram.location_search(:fid)
+    instagram.each do |instagram|
+      venue_photo_array = image_tag instagram.images.low_resolution.url #need to do this to get instapics for 4sq loca
+    end
   end
 # Might be US only: price_tier:f["price"]["tier"], open_now:["hours"]["isOpen"]
 

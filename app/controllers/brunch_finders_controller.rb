@@ -5,7 +5,7 @@ class BrunchFindersController < ApplicationController
 
   def results
     @latlng = [ params[:lat], params[:lng] ].join(",")
-
+    # @instagram = Instagram.location_search("<%= value[:fid] %>")
     if params[:search_type] == "Bloodies"
       @f = Search.get_bloodies(@latlng)
     elsif params[:search_type] == "Mimosas"

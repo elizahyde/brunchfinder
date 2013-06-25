@@ -1,14 +1,15 @@
 <div>
 <!--Need to show icon if they serve bloodies and/or mimosas-->
 <section class="clearfix">
-<ul id="sort-by" class="cravings-buttons" data-option-key="sortBy">
-      <li><a href="#sortBy=totalCheckins" data-option-value="totalCheckins" class="button brown left">Top Spot</a></li>
-      <li><a href="#sortBy=hereNow" data-option-value="hereNow" class="button brown middle">Popular Now</a></li>
-      <li><a href="#sortBy=name" data-option-value="name" class="button brown right">Name</a></li>
+<ul id="sortBy" class="cravings-buttons">
+      <li><a href="#totalCheckins" class="button brown left">Most Loved</a></li>
+      <li><a href="#hereNow" class="button brown middle">Crowd Status</a></li>
+      <li><a href="#name" class="button brown right">A-to-Z</a></li>
 </ul>
 </section>
 <div id="container" class="clearfix">
   <% @f.first(10).each do |key, value| %>
+
   <div class="venue" style="background-image: url(http://maps.googleapis.com/maps/api/staticmap?center=<%= value[:flat] %>,<%= value[:flng] %>&zoom=16&size=420x420&maptype=roadmap&sensor=false);">
         <p class="totalCheckins"><%= value[:totalCheckins] %></p>
         <h3 class="hereNow"><%= value[:fhereNow] %></h3>
@@ -25,6 +26,12 @@
 
       $container.isotope({
         itemSelector: '.venue',
+        layoutMode : 'masonry',
+        sortBy: 'totalCheckins',
+        animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false },
         getSortData : {
           name : function ( $elem ) {
             return $elem.find('.name').text();
@@ -35,22 +42,16 @@
           totalCheckins : function ( $elem ) {
             return parseInt($elem.find('.totalCheckins').text(), 10);
           }
-        },
-
-        layoutMode : 'masonry',
-        sortBy : 'name',
-        resizable: false, // disable normal resizing
-        // set columnWidth to a percentage of container width
-        masonry: { columnWidth: $container.width() / 5 }
-
+        }
       });
-      // update columnWidth on window resize
-      $(window).smartresize(function(){
-        $container.isotope({
-          // update columnWidth to a percentage of container width
-          masonry: { columnWidth: $container.width() / 5 }
-        })
 
+
+      $('#sortBy a').click(function(){
+        // get href attribute, minus the '#'
+        var sortName = $(this).attr('href').slice(1);
+        $('#container').isotope({ sortBy : sortName });
+        return false;
+      });
 
     });
   </script>
