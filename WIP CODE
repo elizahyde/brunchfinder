@@ -28,3 +28,10 @@ Photos from Venue: photos
   params: limit (# of results) offset (used to page through)
 Tips: tips
 
+<div class="venue" style="background-image: url(<% @instagram.first do |instagram| %><%= image_tag instagram.images.low_resolution.url %>  <% end %>)">
+
+<div class="venue" style="background-image: url(http://maps.googleapis.com/maps/api/staticmap?center=<%= value[:flat] %>,<%= value[:flng] %>&zoom=16&size=420x420&maptype=roadmap&sensor=false);">
+@instagram = Instagram.location_search(:fid)
+<% @instagram.first(20).each do |instagram| %>
+   <li> <%= image_tag instagram.images.low_resolution.url %><li>
+    <% end %>

@@ -8,14 +8,21 @@ class Search
         totalCheckins:f["venue"]["stats"]["checkinsCount"], flat:f["venue"]["location"]["lat"], flng:f["venue"]["location"]["lng"],
         flikes_count:f["venue"]["likes"]["count"], ftips_count:f["venue"]["stats"]["tipCount"],
         fhereNow:f["venue"]["hereNow"]["count"],fphotos_count:f["venue"]["photos"]["count"]}
+        end
+        # to search for photos by venue id
+    results.each do |k,v|
+      img_response = HTTParty.get("https://api.foursquare.com/v2/venues/#{v[:fid]}/photos?&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}")
+
+      img_results = {
+        :img_url => img_response["response"]["photos"]["groups"][1]["items"][0]["sizes"]["items"][1]["url"]
+      }
+
+      results[k] = results[k].merge(img_results)
+      # binding.pry
+      end
+      return results
     end
-  return results
-  @instagram = Instagram.location_search(:fid)
-    instagram.each do |instagram|
-      venue_photo_array = image_tag instagram.images.low_resolution.url #need to do this to get instapics for 4sq loca
-    end
-  end
-# Might be US only: price_tier:f["price"]["tier"], open_now:["hours"]["isOpen"]
+
 
   def self.get_bloodies(latlng)
     response = HTTParty.get("https://api.foursquare.com/v2/venues/explore?ll=#{latlng}&query=brunch,bloody+mary&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}")
