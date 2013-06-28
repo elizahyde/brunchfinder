@@ -1,223 +1,9 @@
-/* Start: Recommended Isotope styles */
-
-/**** Isotope Filtering ****/
-
-.isotope-item {
-  z-index: 2;
-}
-
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
-}
-
-/**** Isotope CSS3 transitions ****/
-
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
-
-/* End: Recommended Isotope styles */
+ Start: Recommended Isotope styles */
 
 
 
-/* disable CSS transitions for containers with infinite scrolling*/
-.isotope.infinite-scrolling {
-  -webkit-transition: none;
-     -moz-transition: none;
-      -ms-transition: none;
-       -o-transition: none;
-          transition: none;
-}
-
-
-/**** Base styles ****/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  /*font: inherit;*/
-  font-family: 'PT Sans Caption', sans-serif;
-  vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-
-a img { border: none; }
-
-em { font-style: italic; }
-strong { font-weight: bold; }
-
-blockquote {
-  padding-left: 1.0em;
-  margin-left: 1.0em;
-  border-left: 1px solid #333;
-  font-style: italic;
-}
-
-/**** Isotope styles ****/
-
-/* required for containers to inherit vertical size from window */
-html,
-body {
-  height: 100%;
-}
-
-#container {
-  padding: 5px;
-  margin-bottom: 20px;
-  width:auto;
-  height:auto;
-}
-
-.venue {
-  width: 275px;
-  height: 275px;
-  margin: 5px;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  background: #ffc940;
-  color: #553322;
-  -webkit-border-radius: 1em;
-      -moz-border-radius: 1em;
-          border-radius: 1em;
-}
-
-.venue * {
-  position: absolute;
-  margin: 0;
-}
-
-.venue .hereNow {
-  right: 0.4em;
-  top: 0.4em;
-  font-size: 3.8em;
-  line-height: 1.0em;
-  color: #ffc940;
-
-}
-.venue.large .hereNow {
-  font-size: 4.5em;
-}
-
-.venue.fake .hereNow {
-  color: #ffc940;
-}
-
-.venue .name {
-  left: 0.3em;
-  bottom: 4.0em;
-  font-size: 1.5em;
-  font-family: 'PT Sans Caption', sans-serif;
-  color: #ffc940;
-  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
-}
-.venue .name a {
-  color: #ffc940;
-  font-family: 'PT Sans Caption', sans-serif;
-  text-decoration: none;
-}
-
-.venue .address {
-  font-size: 0.9em;
-  left: 0.5em;
-  bottom: 0.5em;
-  color: #ffc940;
-  background-color: rgba(0, 0, 0, 0.8);
-  background: rgba(0, 0, 65, 0.8);
-}
-
-.venue .totalCheckins {
-  visibility: hidden;
-  font-size: 1.25em;
-  font-weight: bold;
-  color: hsla(0,0%,0%,.5);
-  right: 0.5em;
-  top: 0.5em;
-}
-
-.variable-sizes .venue.width2 { width: 230px; }
-
-.variable-sizes .venue.height2 { height: 230px; }
-
-.variable-sizes .venue.width2.height2 {
-  font-size: 2.0em;
-}
-
-.venue.large,
-.variable-sizes .venue.large,
-.variable-sizes .venue.large.width2.height2 {
-  font-size: 3.0em;
-  width: 350px;
-  height: 350px;
-  z-index: 100;
-}
-
-.clickable .venue:hover {
-  cursor: pointer;
-}
-
-.clickable .venue:hover h3 {
-  text-shadow:
-    0 0 10px white,
-    0 0 10px white
-  ;
-}
-
-.clickable .venue:hover h2 {
-  color: white;
-}
-
-/**** Example Options ****/
-
+/*/**** Example Options ****/
+/*/*
 #options {
   padding-bottom: 1.0em;
 }
@@ -292,7 +78,7 @@ body {
 }
 
 /* Combination filter options*/
-
+/*
 #options .option-combo {
   display: inline-block;
   float: left;
@@ -314,7 +100,7 @@ body {
 }
 
 /* Color shapes */
-
+/*
 .color-shape {
   width: 70px;
   height: 70px;
@@ -349,11 +135,11 @@ body {
 .color-shape a:hover {
   background: white;
   background: hsla( 0, 0%, 100%, 0.5 );
-}
+}*/
 
 /**** Horizontal ****/
 
-.horizontal #container {
+/*.horizontal #container {
   height: 80%;
 }
 
@@ -391,10 +177,10 @@ body {
 .docs #content a:hover {
   border-bottom: 1px dotted;
 }
-
+*/
 /**** Doc page nav ****/
 
-
+/*
 
 #site-nav {
   width: 200px;
@@ -428,7 +214,7 @@ body {
   margin: 0 0 1.0em;
   font-weight: bold;
 }
-
+*//*
 #site-nav ul ul { margin-bottom: 0; }
 
 #site-nav ul a {
@@ -449,9 +235,9 @@ body {
   padding-left: 1.2em;
   font-weight: normal;
 }
-
+*/
 /**** Doc content ****/
-
+/*
 .docs #content h2 {
   border-top: 1px solid #333;
   padding-top: 0.8em;
@@ -545,7 +331,7 @@ h3#options {
 }
 
 /* Commercial license blurb */
-
+/*/*/*
 .docs #commercial {
   background: white;
   padding: 10px;
@@ -556,7 +342,7 @@ h3#options {
 .docs #commercial a { font-weight: bold;}
 
 /**** Pygments ****/
-
+/*/*
 code .s1,
 code .s { color: #78BD55; } /* string */
 code .mi, /* integer */
@@ -579,14 +365,14 @@ code .nf { color: #9EA8B8; } /* css id */
 code .nc { color: #A78352; }  /* CSS class */
 code .m  { color: #DE8E50; } /* CSS value */
 code .nd { color: #9FAD7E; } /* CSS pseudo selector */
-
-
-
+*/
+*/*/
+*/*/*/
 /**** Super list ****/
 
 
 /**** Sites using Isotope ****/
-
+/*
 #sites h2 {
   display: none;
   padding: 0.4em;
@@ -687,8 +473,8 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
        -o-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-
-.super-list .link.away a:before {
+*/
+/*.super-list .link.away a:before {
   top: 25px;
   left: 0px;
   -webkit-transform: rotate(-45deg);
@@ -696,8 +482,8 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
       -ms-transform: rotate(-45deg);
        -o-transform: rotate(-45deg);
           transform: rotate(-45deg);
-}
-
+}*/
+/*
 .super-list .link a:hover {
   background: #E58;
   color: white;
@@ -709,9 +495,9 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
   left: 18px;
   font-size: 20px;
 }
-
+*/
 /**** BIG Graph ****/
-
+/*
 .big-graph {
   background: white;
   height: 600px;
@@ -735,8 +521,8 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
       -ms-transition: -ms-transform     0.25s;
        -o-transition: -o-transform      0.25s;
           transition: transform         0.25s;
-}
-
+}*/
+/*
 .big-graph .project:hover {
   z-index: 5;
 
@@ -769,7 +555,7 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 }
 
 /**** Infinite Scroll ****/
-
+/*
 #infscr-loading {
   position: fixed;
   text-align: center;
@@ -787,9 +573,10 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
           border-radius: 10px;
 }
 
-
-
+/*
+*/
 /* The Magnificent Clearfix: nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
+/*.clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix { zoom: 1; }*/
+*/*/*/*/*/

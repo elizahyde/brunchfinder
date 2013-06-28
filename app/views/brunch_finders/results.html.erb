@@ -1,19 +1,18 @@
-<div>
-<!--Need to show icon if they serve bloodies and/or mimosas-->
-<section class="clearfix">
-  <ul id="sortBy" class="cravings-buttons">
-        <li><a href="#totalCheckins" class="button brown left">Most Loved</a></li>
-        <li><a href="#hereNow" class="button brown middle">Crowd Status</a></li>
-        <li><a href="#name" class="button brown right">A-to-Z</a></li>
-  </ul>
-</section>
+<ul id="sortBy" class="sort-buttons">
+    <li><a href="#totalCheckins" class="button brown left">Most Visited</a></li>
+    <li><a href="#hereNow" class="button brown middle">Crowd Status</a></li>
+    <li><a href="#name" class="button brown right">A-to-Z</a></li>
+</ul>
+
 <div id="container" class="clearfix">
   <% @f.first(10).each do |key, value| %>
   <div class="venue" style="background-image:url(<%= value[:img_url] %>); background-size:cover;">
         <p type="hidden" class="totalCheckins"><%= value[:totalCheckins] %></p>
         <h3 class="hereNow"><%= value[:fhereNow] %></h3>
-        <h2 class="name"><a href="<%= value[:furl] %>" alt="Details" target="_blank"><%= key %></a></h2>
-        <p class="address"><% if value[:faddress] %><%= value[:faddress] %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %> </p>
+        <div class ="shadyText">
+          <h2 class="name"><a href="<%= value[:furl] %>" alt="Details" target="_blank"><%= key %></a></h2>
+          <p class="address"><% if value[:faddress] %><%= value[:faddress] %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %> </p>
+      </div>
   </div>
       <%end %>
 </div>
@@ -27,6 +26,7 @@
         itemSelector: '.venue',
         layoutMode : 'masonry',
         sortBy: 'totalCheckins',
+        sortAscending : false,
         animationOptions: {
                     duration: 750,
                     easing: 'linear',
@@ -54,4 +54,3 @@
 
     });
   </script>
-</div>

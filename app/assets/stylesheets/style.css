@@ -1,124 +1,130 @@
-body {
-  font-family: verdana;
-  color: #553322;
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
-}
-p, h1, h2, h3, h4, h5, li {
+  border: 0;
+  font-size: 100%;
   color: #553322;
-  font-family: 'Averia Libre', cursive;
+  /*font: inherit;*/
+  font-family: 'PT Sans Caption', sans-serif;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a img { border: none; }
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+blockquote {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  border-left: 1px solid #333;
+  font-style: italic;
+}
+
+/**** Isotope styles ****/
+
+/* required for containers to inherit vertical size from window */
+html,
+body {
+  height: 100%;
 }
 
 .wrapper {
   position: fixed;
   width: 100%;
   background-color: #ffc940;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .sticky-bar {
   margin: 0 auto;
-  margin-top: 10px;
   width: 100%;
   text-align: center;
-  height: 50px;
-  z-index: 1000;
+  height: 60px;
+  z-index: 500;
   -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
   box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
 }
 
 .brunch_title {
-  background-color: #ffc940;
   font-family: 'Pacifico', cursive;
   color: white;
   font-size: 32px;
   text-decoration: none;
-  z-index: 10001;
+  z-index: 530;
 }
 
-.body {
-  position: absolute;
+.resultsPage {
   width: 100%;
   height: 100%;
-  top: 60px;
-  left:0;
   z-index: 2;
-}
-.results {
-  text-align: center;
-}
-
-#photogrid {
-  margin: auto;
-  background-color: black;
-}
-
-#photogrid li{
-  display: block;
-  float: left;
-  position: relative;
-  z-index: 1;
-}
-
-#photogrid img {
-  display: block;
-  width: 100%;
+  padding-top: 60px;
 }
 
 .searchbkg {
+  color: white;
+  text-align: center;
   width: 350px;
-  height: 200px;
-  position: absolute;
-  left:0;
-  right:0;
+  height: 275px;
+  position: relative;
   margin-left:auto;
   margin-right:auto;
   top: 15%;
-  z-index: 3;
+  z-index: 10;
   background-color: #ffc940;
   background-color: rgba(255, 201, 65, 0.8);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-}
-
-.searchbox {
-  position: absolute;
-  width: 100%; height: 100%;
-  z-index: 4;
-  text-align: center;
-  padding: 0 5px 0 5px 0;
   -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
   box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
 }
 
-.searchbox h2 {
-  color: #553322;
-  font-size: 24px;
+.searchbox {
+  padding: 10px;
+  position:absolute;
+  z-index: 12;
 }
-.searchbox ul {
-  list-style-type: none;
-  z-index: 5;
-}
+
 .searchbar {
   width: 300px;
+  height: 30px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-
   background-color: #F9F9F9;
-  z-index: 6;
+  z-index: 14;
   text-align: center;
 }
 
-.cravings-buttons {
+.sort-buttons {
+  position:fixed;
   text-align: center;
   display: inline-block;
+  left: -10px;
+  top: 22px;
+  z-index: 1050;
+  padding: 0;
+  margin: 0;
 }
 
-.cravings-buttons li{
+.sort-buttons li{
   list-style-type: none;
   float: left;
 }
@@ -135,10 +141,18 @@ p, h1, h2, h3, h4, h5, li {
 .button {
   margin: 0;
   display: block;
-  font-size: 12px;
+  font-size: 16px;
   text-decoration: none!important;
-  font-family: 'Averia Libre', cursive;
+  font-family: 'PT Sans Caption', sans-serif;
   padding: 8px 12px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #6d6d6d;
+  background-color: #553322;
+  background-image: -moz-linear-gradient(#8c5438, #553322);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#553322), to(#8c5438));
+  background-image: -webkit-linear-gradient(#8c5438, #553322);
+  background-image: -o-linear-gradient(#8c5438, #553322);
+  border: 1px solid #4d4d4d;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
@@ -147,6 +161,7 @@ p, h1, h2, h3, h4, h5, li {
 }
 
 .button:active {
+  border: 1px solid #000;
   position: relative;
   top: 1px;
   box-shadow: inset 0px 0px 3px #999;
@@ -155,18 +170,7 @@ p, h1, h2, h3, h4, h5, li {
   -moz-box-shadow: inset 0px 0px 3px #999;
 }
 
-/* The styles for the black button */
-.brown {
-  color: #fff;
-  border: 1px solid #4d4d4d;
-  background-image: -moz-linear-gradient(#8c5438, #553322);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#553322), to(#8c5438));
-  background-image: -webkit-linear-gradient(#8c5438, #553322);
-  background-image: -o-linear-gradient(#8c5438, #553322);
-  text-shadow: 1px 1px 1px #6d6d6d;
-  background-color: #553322;
-}
-.brown:hover {
+.button:hover {
   border: 1px solid #363636;
   background-image: -moz-linear-gradient(#553322, #8c5438);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8c5438), to(#553322));
@@ -174,9 +178,6 @@ p, h1, h2, h3, h4, h5, li {
   background-image: -o-linear-gradient(#553322, #8c5438);
   background-color: #8c5438;
 }
-.black:active {border: 1px solid #000;}
-
-/* The styles for the button groups */
 
 .right {
   border-top-right-radius: 6px;
@@ -267,6 +268,186 @@ p, h1, h2, h3, h4, h5, li {
           transition-duration: 0s;
 }
 
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+
+#container {
+  padding: 5px;
+  margin-bottom: 20px;
+  width:auto;
+  height:auto;
+}
+
+.venue {
+  width: 275px;
+  height: 275px;
+  margin: 5px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  background: #ffc940;
+  color: #553322;
+  -webkit-border-radius: 1em;
+      -moz-border-radius: 1em;
+          border-radius: 1em;
+}
+
+.venue * {
+  position: absolute;
+  margin: 0;
+}
+.venue .helperText {
+  right: .5em;
+  top: 0.5em;
+  font-size: 1em;
+  line-height: 1.0em;
+  color: #ffc940;
+
+}
+.venue .hereNow {
+  right: 0.4em;
+  top: 0.4em;
+  font-size: 3.8em;
+  line-height: 1.0em;
+  color: #ffc940;
+
+}
+.venue.large .hereNow {
+  font-size: 4.5em;
+}
+
+.venue.fake .hereNow {
+  color: #ffc940;
+}
+.venue .shadyText {
+  position:relative;
+  height:auto;
+  width:auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+.venue .name {
+  left: 0.5em;
+  bottom: 4.0em;
+  font-size: 1.5em;
+  width: 80%;
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #ffc940;
+}
+.venue .name a {
+  color: #ffc940;
+  text-decoration: none;
+}
+
+.venue .address {
+  font-size: 0.9em;
+  left: 0.6em;
+  bottom: 0.6em;
+  color: #ffc940;
+}
+
+.venue .totalCheckins {
+  visibility: hidden;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: hsla(0,0%,0%,.5);
+  right: 0.6em;
+  top: 0.6em;
+}
+
+.variable-sizes .venue.width2 { width: 230px; }
+
+.variable-sizes .venue.height2 { height: 230px; }
+
+.variable-sizes .venue.width2.height2 {
+  font-size: 2.0em;
+}
+
+.venue.large,
+.variable-sizes .venue.large,
+.variable-sizes .venue.large.width2.height2 {
+  font-size: 3.0em;
+  width: 350px;
+  height: 350px;
+  z-index: 100;
+}
+
+.clickable .venue:hover {
+  cursor: pointer;
+}
+
+.clickable .venue:hover h3 {
+  text-shadow:
+    0 0 10px white,
+    0 0 10px white
+  ;
+}
+
+.clickable .venue:hover h2 {
+  color: white;
+}
 
 
 @media screen and (min-width:1024px) {

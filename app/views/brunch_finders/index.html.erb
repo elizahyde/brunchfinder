@@ -1,31 +1,18 @@
-<div id="photogrid">
-  <ul>
-    <li><img src="/assets/bloodies.jpg"></li>
-    <li><img src="/assets/bloodies2.jpg"></li>
-    <li><img src="/assets/br_drinks.jpg"></li>
-    <li><img src="/assets/brioche.jpg"></li>
-  </ul>
-</div>
 
 <div class="searchbkg">
-  <div class="searchbox"><br>
-    <h2>Enter your location then follow your craving</h2>
-    <br>
+  <div class="searchbox">
     <form method="get" action="/results">
-    <input type="text" class="searchbar" id="geolocale" autosave="saveval" name="location">
-
-      <input name="lat" type="hidden">
-      <input name="lng" type="hidden">
-      <input name="name" type="hidden">
-      <br><br>
-          <ul class="cravings-buttons">
-            <li><input class="button brown left" name="search_type" type="Submit" value="Bloodies"></li>
-            <li><input class="button brown middle" name="search_type" type="Submit" value="Mimosas"></li>
-            <li><input  class="button brown right" name="search_type" type="submit" value="I want it all!"></li>
-          </ul>
+      <h1>Where do you want to brunch?</h1>
+      <input type="text" class="searchbar" id="geolocale" autosave="saveval" name="location">
+        <input name="lat" type="hidden">
+        <input name="lng" type="hidden">
+        <input name="name" type="hidden">
+      <input  class="lonely button" name="search_type" type="submit" value="Find me brunch">
     </form>
   </div>
 </div>
+
+
 <script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 <script>
 $(function() {

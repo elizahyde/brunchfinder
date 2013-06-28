@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Brunchover</title>
-  <link href='http://fonts.googleapis.com/css?family=Lily+Script+One|Pacifico|Marmelad|Averia+Libre'|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lily+Script+One|Pacifico|Marmelad|Averia+Libre'|PT+Sans+Caption:400,700'' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -16,10 +16,9 @@
 </div>
 
 <body>
-  <div class="body">
+  <div class="resultsPage">
     <%= yield %>
   </div>
-
 </body>
 
 </html>
