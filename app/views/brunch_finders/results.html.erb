@@ -1,14 +1,14 @@
 <ul id="sortBy" class="sort-buttons">
-    <li><a href="#totalCheckins" class="button brown left">Most Visited</a></li>
-    <li><a href="#hereNow" class="button brown middle">Crowd Status</a></li>
-    <li><a href="#distance" class="button brown right">Distance</a></li>
+    <li><a href="#totalCheckins" class="button left">MOST VISITED</a></li>
+    <li><a href="#hereNow" class="button middle">CROWD STATUS</a></li>
+    <li><a href="#distance" class="button right">DISTANCE</a></li>
 </ul>
 
 <div id="container" class="clearfix">
   <% @f.first(10).each do |key, value| %>
     <div class="venue" style="background-image:url(<%= value[:img_url] %>); background-size:cover;">
-      <p type="hidden" class="totalCheckins"><%= value[:totalCheckins] %></p>
-      <h3 class="hereNow"><%= value[:fhereNow] %></h3>
+      <p class="totalCheckins"><%= value[:totalCheckins] %></p>
+        <h3 class="hereNow"><a class="tooltip" href="#"><%= value[:fhereNow] %><span>Current Checkins</span></a></h3>
       <h2 class="name"><a href="<%= value[:furl] %>" alt="Details" target="_blank"><%= key %></a></h2>
       <span class="distance"><p><%= value[:fdistance].meters.to.miles.round(2) %> miles away</p></span>
     </div>
@@ -25,6 +25,7 @@
         layoutMode : 'masonry',
         sortBy: 'totalCheckins',
         sortAscending : false,
+        animationEngine : 'best-available',
         animationOptions: {
                     duration: 750,
                     easing: 'linear',
@@ -37,7 +38,7 @@
             return parseInt($elem.find('.hereNow').text(), 10 );
           },
           totalCheckins : function ( $elem ) {
-            return parseInt($elem.find('.totalCheckins').text(), 10);
+            return parseInt($elem.find('.totalCheckins').text(), 10 );
           }
         }
       });
