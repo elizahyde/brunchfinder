@@ -3,8 +3,9 @@ class Search
     response = HTTParty.get("https://api.foursquare.com/v2/venues/explore?ll=#{latlng}&query=brunch&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}")
     results = {}
 
-    response["response"]["groups"][0]["items"].each do |f|
-      results[f["venue"]["name"]] = {fid:f["venue"]["id"], furl:f["venue"]["canonicalUrl"], faddress:f["venue"]["location"]["address"], fcity:f["venue"]["location"]["city"],
+    response["response"]["groups"][0]["items"].first(10).each do |f|
+      results[f["venue"]["name"]] = {fid:f["venue"]["id"], furl:f["venue"]["canonicalUrl"], fdistance:f["venue"]["location"]["distance"],
+        faddress:f["venue"]["location"]["address"], fcity:f["venue"]["location"]["city"],
         totalCheckins:f["venue"]["stats"]["checkinsCount"], flat:f["venue"]["location"]["lat"], flng:f["venue"]["location"]["lng"],
         flikes_count:f["venue"]["likes"]["count"], ftips_count:f["venue"]["stats"]["tipCount"],
         fhereNow:f["venue"]["hereNow"]["count"],fphotos_count:f["venue"]["photos"]["count"]}

@@ -35,3 +35,8 @@ Tips: tips
 <% @instagram.first(20).each do |instagram| %>
    <li> <%= image_tag instagram.images.low_resolution.url %><li>
     <% end %>
+
+
+
+    Add this in distance hoverover??
+    <span class="distance"><p><% if value[:faddress] %><%= value[:faddress] %>, <%= value[:fcity] %> <% else %> <%= value[:fcity] %> <% end %></p></span>

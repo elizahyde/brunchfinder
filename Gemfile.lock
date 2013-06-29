@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    alchemist (0.1.5)
     arel (3.0.2)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
@@ -47,25 +48,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    faraday (0.8.7)
-      multipart-post (~> 1.1)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
-    foursquare2 (1.9.7)
-      faraday (~> 0.8)
-      faraday_middleware (>= 0.8)
-      hashie (>= 1.0, < 3.0.0)
-    hashie (2.0.5)
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.6.1)
-    instagram (0.10.0)
-      faraday (>= 0.7, < 0.9)
-      faraday_middleware (~> 0.8)
-      hashie (>= 0.4.0)
-      multi_json (~> 1.0, >= 1.0.3)
     journey (1.0.4)
     jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
@@ -79,7 +66,6 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     multi_xml (0.5.4)
-    multipart-post (1.2.0)
     pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -146,13 +132,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  alchemist
   better_errors
   binding_of_caller
-  foursquare2
   httparty
-  instagram
   jquery-rails
-  json
   pg
   pry-debugger
   pry-rails

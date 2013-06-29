@@ -1,23 +1,4 @@
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  color: #553322;
-  /*font: inherit;*/
-  font-family: 'PT Sans Caption', sans-serif;
-  vertical-align: baseline;
-}
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -41,6 +22,9 @@ blockquote {
 html,
 body {
   height: 100%;
+  color: #ffc940;
+  /*font: inherit;*/
+  font-family: 'PT Sans Caption', sans-serif;
 }
 
 .wrapper {
@@ -51,10 +35,8 @@ body {
 }
 
 .sticky-bar {
-  margin: 0 auto;
   width: 100%;
   text-align: center;
-  height: 60px;
   z-index: 500;
   -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
@@ -118,7 +100,7 @@ body {
   text-align: center;
   display: inline-block;
   left: -10px;
-  top: 22px;
+  top: 60px;
   z-index: 1050;
   padding: 0;
   margin: 0;
@@ -141,17 +123,17 @@ body {
 .button {
   margin: 0;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none!important;
   font-family: 'PT Sans Caption', sans-serif;
   padding: 8px 12px;
   color: #fff;
   text-shadow: 1px 1px 1px #6d6d6d;
-  background-color: #553322;
-  background-image: -moz-linear-gradient(#8c5438, #553322);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#553322), to(#8c5438));
-  background-image: -webkit-linear-gradient(#8c5438, #553322);
-  background-image: -o-linear-gradient(#8c5438, #553322);
+  background-color: #ffc940;
+  background-image: -moz-linear-gradient(#8c5438, #ffc940);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffc940), to(#8c5438));
+  background-image: -webkit-linear-gradient(#8c5438, #ffc940);
+  background-image: -o-linear-gradient(#8c5438, #ffc940);
   border: 1px solid #4d4d4d;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -166,16 +148,16 @@ body {
   top: 1px;
   box-shadow: inset 0px 0px 3px #999;
   -o-box-shadow: inset 0px 0px 3px #999;
-  -webkit-box-shadow: inset 0px 0px 3px #999;
   -moz-box-shadow: inset 0px 0px 3px #999;
+  -webkit-box-shadow: inset 0px 0px 3px #999;
 }
 
 .button:hover {
   border: 1px solid #363636;
-  background-image: -moz-linear-gradient(#553322, #8c5438);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8c5438), to(#553322));
-  background-image: -webkit-linear-gradient(#553322, #8c5438);
-  background-image: -o-linear-gradient(#553322, #8c5438);
+  background-image: -moz-linear-gradient(#ffc940, #8c5438);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8c5438), to(#ffc940));
+  background-image: -webkit-linear-gradient(#ffc940, #8c5438);
+  background-image: -o-linear-gradient(#ffc940, #8c5438);
   background-color: #8c5438;
 }
 
@@ -187,15 +169,15 @@ body {
   border-right: 6px;
 }
 .right:hover {
-  border-right: 0px;
+  border-right: 0;
 }
 .middle {
-  border-radius: 0px;
-  -moz-radius: 0px;
-  border-right: 0px;
+  border-radius: 0;
+  -moz-radius: 0;
+  border-right: 0;
 }
 .middle:hover {
-  border-right: 0px;
+  border-right: 0;
 }
 
 .left {
@@ -334,7 +316,7 @@ body {
 
 #container {
   padding: 5px;
-  margin-bottom: 20px;
+  margin-top: 30px;
   width:auto;
   height:auto;
 }
@@ -347,7 +329,6 @@ body {
   overflow: hidden;
   position: relative;
   background: #ffc940;
-  color: #553322;
   -webkit-border-radius: 1em;
       -moz-border-radius: 1em;
           border-radius: 1em;
@@ -357,14 +338,7 @@ body {
   position: absolute;
   margin: 0;
 }
-.venue .helperText {
-  right: .5em;
-  top: 0.5em;
-  font-size: 1em;
-  line-height: 1.0em;
-  color: #ffc940;
 
-}
 .venue .hereNow {
   right: 0.4em;
   top: 0.4em;
@@ -380,32 +354,47 @@ body {
 .venue.fake .hereNow {
   color: #ffc940;
 }
-.venue .shadyText {
-  position:relative;
-  height:auto;
-  width:auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 3;
-}
+
 .venue .name {
-  left: 0.5em;
+  left: 0;
   bottom: 4.0em;
-  font-size: 1.5em;
   width: 80%;
+  border:0;
+  vertical-align:baseline;
+  margin:0;
+  padding: 0;
+  font-size: 1.3em;
   font-family: 'PT Sans Caption', sans-serif;
   color: #ffc940;
 }
+
 .venue .name a {
+/*  text-decoration: none;*/
+  font-family: 'PT Sans Caption', sans-serif;
   color: #ffc940;
-  text-decoration: none;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
 }
 
-.venue .address {
-  font-size: 0.9em;
-  left: 0.6em;
-  bottom: 0.6em;
+.venue .distance {
+  left: 0;
+  bottom: .1;
+  width: 100%;
+  border:0;
+  vertical-align:baseline;
+  margin:0;
+  padding: 0;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 1em;
   color: #ffc940;
+}
+
+.venue .distance p {
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #ffc940;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+
 }
 
 .venue .totalCheckins {
@@ -417,23 +406,6 @@ body {
   top: 0.6em;
 }
 
-.variable-sizes .venue.width2 { width: 230px; }
-
-.variable-sizes .venue.height2 { height: 230px; }
-
-.variable-sizes .venue.width2.height2 {
-  font-size: 2.0em;
-}
-
-.venue.large,
-.variable-sizes .venue.large,
-.variable-sizes .venue.large.width2.height2 {
-  font-size: 3.0em;
-  width: 350px;
-  height: 350px;
-  z-index: 100;
-}
-
 .clickable .venue:hover {
   cursor: pointer;
 }
@@ -441,8 +413,7 @@ body {
 .clickable .venue:hover h3 {
   text-shadow:
     0 0 10px white,
-    0 0 10px white
-  ;
+    0 0 10px white;
 }
 
 .clickable .venue:hover h2 {
@@ -454,32 +425,22 @@ body {
   #photogrid li {
     width:20%;
   }
-/*  .searchbkg {
-    width:20%;
-  }*/
+
 }
 @media screen and (max-width:1024px) {
   #photogrid li {
     width:25%;
   }
-/*  .searchbkg {
-    width:25%;
-  }*/
 }
+
 @media screen and (max-width:800px) {
   #photogrid li {
     width:50%;
   }
-/*  .searchbkg {
-    width:50%;
-  }*/
 }
+
 @media screen and (max-width:480px) {
   #photogrid li {
     width:100%;
   }
-/*  .searchbkg {
-    width:100%;
-  }*/
 }
-
