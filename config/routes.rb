@@ -5,4 +5,6 @@ Brunchfinder::Application.routes.draw do
   get '/results' => 'brunch_finders#results'
 
   root :to => 'brunch_finders#index'
+
+  match '*a', :to => 'errors#routing'
 end
