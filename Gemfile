@@ -10,7 +10,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'unicorn'
 gem 'httparty'
 gem 'alchemist' #converts meters to miles and other things that just be includes in ruby
 
@@ -19,5 +19,4 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'pry-debugger'
-  gem 'unicorn'
 end
