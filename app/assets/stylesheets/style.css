@@ -223,9 +223,8 @@ a:hover.tooltip span {
 }
 .about  {
   position:fixed;
-  text-align: center;
   display: inline-block;
-  right: 180px;
+  left: 350px;
   top: 50px;
   z-index: 1050;
   padding: 0;
