@@ -4,8 +4,7 @@ class BrunchFindersController < ApplicationController
 
   def results
     @latlng = [ params[:lat], params[:lng] ].join(",")
-
-      @f = Search.get_brunch(@latlng)
+    @f = Search.get_brunch(@latlng)
   end
 
 end

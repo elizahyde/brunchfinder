@@ -2,10 +2,9 @@
   <div class="searchbox">
     <form method="get" action="/results">
       <h1>Where do you want to brunch?</h1>
-      <input type="text" class="searchbar" id="geolocale" autosave="saveval" name="location">
+      <input type="text" class="searchbar" id="geolocale" name="location">
         <input name="lat" type="hidden">
         <input name="lng" type="hidden">
-        <input name="name" type="hidden">
       <input  class="lonely button" name="search_type" type="submit" value="Find me brunch">
     </form>
   </div>
@@ -16,10 +15,12 @@
 <script>
 $(function() {
   $("#geolocale").geocomplete({
-    details: "form"});
+    details: "form",
+    detailsAttribute: "name"
+  });
 
   // Trigger geocoding request.
-  $("Submit").click(function(){
+  $("submit").click(function(){
     $("#geolocale").trigger("geocode");
   });
 });
