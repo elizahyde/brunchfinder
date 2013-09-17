@@ -22,36 +22,31 @@ blockquote {
 html,
 body {
   height: 100%;
-  font-family: 'PT Sans Caption', sans-serif;
+  font-family: 'Marmelad', sans-serif;
   background: black;
 }
 
 a.tooltip {
     position: relative;
     display: inline-block;
-
 }
 
 a.tooltip span {
     position: absolute;
     left: 100%;
-    width:120px;
-    height: 40px;
     margin-left: -100px;
     background: #000;
     color: #fff;
     text-align: center;
     visibility: hidden;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 0;
 }
 
 a.tooltip span:after {
     content: '';
     position: absolute;
-/*    top: 100%;
-    right: 50%;*/
     margin-top: -8px;
     width: 0; height: 0;
     border-top: 8px solid #000;
@@ -140,24 +135,6 @@ a:hover.tooltip span {
   text-align: center;
   font-family: 'PT Sans Caption', sans-serif;
   color: black;
-}
-
-
-
-.sort-buttons {
-  position:fixed;
-  text-align: center;
-  display: inline-block;
-  left: -10px;
-  top: 50px;
-  z-index: 1050;
-  padding: 0;
-  margin: 0;
-}
-
-.sort-buttons li{
-  list-style-type: none;
-  float: left;
 }
 
 .button {
@@ -387,21 +364,18 @@ a:hover.tooltip span {
 .venue .hereNow a {
   text-decoration: none;
   color: #ffc940;
-
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
 }
 
-.hereNow .text:hover{
-  visibility:visible;
-}
 
 .venue.large .hereNow {
   font-size: 4.5em;
 }
 
-.venue.fake .hereNow {
+/*.venue.fake .hereNow {
   color: #ffc940;
-}
-
+}*/
 
 .venue .name {
   left: 0;
@@ -454,6 +428,17 @@ a:hover.tooltip span {
   top: 0.6em;
 }
 
+.venue .save2four {
+  font-size: 1.25em;
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #ffc940;
+  left: 0.6em;
+  top: 0.6em;
+}
+
+.venue .locality, .fn, .adr {
+  visibility: hidden;
+}
 .clickable .venue:hover {
   cursor: pointer;
 }
@@ -469,7 +454,6 @@ a:hover.tooltip span {
 }
 
 #aboutContent body{
-  font-family: 'PT Sans Caption', sans-serif;
   color: white;
   width: 896px;
   height: 100%;
@@ -528,7 +512,7 @@ a:hover.tooltip span {
   font-size: 1.125em;
   font-weight: bold;
   color: #ffc940;
-  font-family: 'PT Sans Caption', sans-serif;
+  font-family: 'Marmelad', sans-serif;
 }
 #aboutContent header[role="aboutPage"] { padding-top: 0; border-bottom: white 2px dashed;}
 
@@ -594,7 +578,7 @@ a:hover.tooltip span {
   }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:768px) {
   #photogrid li {
     width:50%;
   }

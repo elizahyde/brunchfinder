@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
 gem 'rails', '3.2.13'
 gem 'pg'
 
@@ -10,7 +9,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'unicorn'
+# gem 'unicorn'
 gem 'httparty'
 gem 'alchemist' #converts meters to miles and other things that just be includes in ruby
 
@@ -20,3 +19,6 @@ group :development do
   gem 'pry-rails'
   gem 'pry-debugger'
 end
+
+gem 'dotenv-rails'
+gem 'bcrypt-ruby', '~> 3.0.0'

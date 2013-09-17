@@ -4,24 +4,21 @@ development:
   encoding: unicode
   database: brunchfinder_development
   pool: 5
-  username: elizahyde
-  password:
-  host: localhost
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
 
 test:
   adapter: postgresql
   encoding: unicode
   database: brunchfinder_test
   pool: 5
-  username: elizahyde
-  password:
-  host: localhost
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
 
 production:
   adapter: postgresql
   encoding: unicode
   database: brunchfinder_production
   pool: 5
-  username: elizahyde
-  password:
-  host: localhost
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
