@@ -1,6 +1,6 @@
 class Search
   def self.get_brunch(latlng)
-    response = HTTParty.get("https://api.foursquare.com/v2/venues/explore?ll=#{latlng}&query=brunch&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}")
+    response = HTTParty.get("https://api.foursquare.com/v2/venues/explore?ll=#{latlng}&query=brunch&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}&v=20140304")
     results = {}
 
     response["response"]["groups"][0]["items"].first(10).each do |f|
@@ -14,7 +14,7 @@ class Search
     # to search for photos by venue id
     results.each do |k,v|
       begin
-        img_response = HTTParty.get("https://api.foursquare.com/v2/venues/#{v[:fid]}/photos?&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}")
+        img_response = HTTParty.get("https://api.foursquare.com/v2/venues/#{v[:fid]}/photos?&client_id=#{ENV['FOURSQCLIENTID']}&client_secret=#{ENV['FOURSQCLIENTSECRET']}&v=20140304")
         img_results = {
           :img_url => img_response["response"]["photos"]["groups"][1]["items"][0]["sizes"]["items"][0]["url"]
         }
