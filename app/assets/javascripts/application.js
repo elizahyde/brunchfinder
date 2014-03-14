@@ -11,4 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= bootstrap.min
+//= jquery.geocomplete.min
+//= jquery.isotope.min
 //= require_tree .

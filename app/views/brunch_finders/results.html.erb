@@ -15,12 +15,10 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 
-
-
 <div id="container" class="clearfix">
   <% @f.first(10).each do |key, value| %>
 
-    <div class="venue" style="background-image:url(<%= value[:img_url] %>); background-size:cover;">
+    <div class="venue" style="background-image:url(https://irs2.4sqi.net/img/general/width480<%= value[:img_url] %>); background-size:cover;">
       <p class="totalCheckins"><%= value[:totalCheckins] %></p>
         <h3 class="hereNow" id="hereNow"><%= value[:fhereNow] %></h3>
       <h2 class="name"><a href="<%= value[:furl] %>" alt="Details" target="_blank"><%= key %></a></h2>
@@ -29,54 +27,46 @@
 </div>
 
 <script>
-    $(function(){
-
-
-      var $container = $('#container');
-
-      $("#container")
-
-      $container.isotope({
-        itemSelector: '.venue',
-        layoutMode : 'masonry',
-        sortBy: 'totalCheckins',
-        sortAscending : false,
-        animationEngine : 'best-available',
-        animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false },
-        getSortData : {
-          distance : function ( $elem ) {
-            return parseFloat($elem.find('.distance').text() );
-          },
-          hereNow : function ( $elem ) {
-            return parseInt($elem.find('.hereNow').text(), 10 );
-          },
-          totalCheckins : function ( $elem ) {
-            return parseInt($elem.find('.totalCheckins').text(), 10 );
-          }
+  $(function(){
+    var $container = $('#container');
+    $("#container");
+    $container.isotope({
+      itemSelector: '.venue',
+      layoutMode : 'masonry',
+      sortBy: 'totalCheckins',
+      sortAscending : false,
+      animationEngine : 'best-available',
+      animationOptions: {
+                  duration: 750,
+                  easing: 'linear',
+                  queue: false },
+      getSortData : {
+        distance : function ( $elem ) {
+          return parseFloat($elem.find('.distance').text() );
+        },
+        hereNow : function ( $elem ) {
+          return parseInt($elem.find('.hereNow').text(), 10 );
+        },
+        totalCheckins : function ( $elem ) {
+          return parseInt($elem.find('.totalCheckins').text(), 10 );
         }
-      });
-
-
-      $('#sortBy a').click(function(){
-        // get href attribute, minus the '#'
-        var sortName = $(this).attr('href').slice(1);
-        $('#container').isotope({ sortBy : sortName });
-        return false;
-      });
-
+      }
     });
 
-    $('#hereNow').tooltip({
-      placement: 'left',
-      content: 'Current Checkins';
+    $('#sortBy a').click(function(){
+      // get href attribute, minus the '#'
+      var sortName = $(this).attr('href').slice(1);
+      $('#container').isotope({ sortBy : sortName });
+      return false;
     });
-  </script>
 
-  <!-- Place this anchor tag where you want the button to go -->
-  <a href="https://foursquare.com/intent/venue.html" class="fourSq-widget" >Save to foursquare</a>
+  });
+
+  $('#hereNow').tooltip({
+    placement: 'left',
+    content: 'Current Checkins'
+  });
+</script>
 
   <!-- Place this script somewhere after the anchor tag above. If you have multiple buttons, only include the script once. -->
   <script>
