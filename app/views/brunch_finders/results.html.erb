@@ -26,49 +26,8 @@
   <% end %>
 </div>
 
-<script>
-  $(function(){
-    var $container = $('#container');
-    $("#container");
-    $container.isotope({
-      itemSelector: '.venue',
-      layoutMode : 'masonry',
-      sortBy: 'totalCheckins',
-      sortAscending : false,
-      animationEngine : 'best-available',
-      animationOptions: {
-                  duration: 750,
-                  easing: 'linear',
-                  queue: false },
-      getSortData : {
-        distance : function ( $elem ) {
-          return parseFloat($elem.find('.distance').text() );
-        },
-        hereNow : function ( $elem ) {
-          return parseInt($elem.find('.hereNow').text(), 10 );
-        },
-        totalCheckins : function ( $elem ) {
-          return parseInt($elem.find('.totalCheckins').text(), 10 );
-        }
-      }
-    });
 
-    $('#sortBy a').click(function(){
-      // get href attribute, minus the '#'
-      var sortName = $(this).attr('href').slice(1);
-      $('#container').isotope({ sortBy : sortName });
-      return false;
-    });
-
-  });
-
-  $('#hereNow').tooltip({
-    placement: 'left',
-    content: 'Current Checkins'
-  });
-</script>
-
-  <!-- Place this script somewhere after the anchor tag above. If you have multiple buttons, only include the script once. -->
+  <!-- Google Analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
